@@ -1,0 +1,25 @@
+.footer {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba($gradient-blue-dark, 1),
+    rgba($gradient-blue-gray, 1)
+  );
+  padding: 10rem 0;
+  border-radius: 0 10rem 0 0;
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include breakpoint(laptop) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+      grid-row-gap: 4rem;
+    }
+  }
+  &__item {
+    margin-bottom: 2rem;
+  }
+  &__link {
+    color: $color-white;
+  }
+}

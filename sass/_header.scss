@@ -1,0 +1,232 @@
+.main-header {
+  background-image: linear-gradient(
+      to right,
+      rgba($gradient-red-light, 0.9),
+      rgba($color-primary-red-dark, 0.9)
+    ),
+    url(../images/bg-pattern-intro.svg);
+  height: 90vh;
+  background-position: 15% 55%;
+  background-size: 180%;
+  background-repeat: no-repeat;
+  border-radius: 0 0 0 10rem;
+  @include breakpoint(tablet) {
+    height: 80vh;
+  }
+  @include breakpoint(phablet) {
+    background-position: center center;
+    background-size: 300%;
+  }
+  @include breakpoint(mobileonly) {
+    height: 70vh;
+  }
+  @include breakpoint(landscap) {
+    height: 100vh;
+  }
+}
+.header {
+  display: grid;
+  grid-template-columns: minmax(min-content, 20rem) 1fr minmax(
+      min-content,
+      30rem
+    );
+  // grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 15rem repeat(2, 1fr);
+  grid-gap: 5vw;
+  align-items: center;
+  justify-items: start;
+
+  &__logo {
+    color: $color-white;
+    font-family: $font-heading;
+    font-size: 4.2rem;
+    font-weight: 700;
+    @include breakpoint(phablet) {
+      grid-column: 1 / -2;
+    }
+  }
+  &__nav {
+    margin-top: 1.5rem;
+    @include breakpoint(phablet) {
+      justify-self: end;
+    }
+  }
+  &__showcase {
+    grid-column: 1 / -1;
+    justify-self: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    // grid-column: 1 / -1;
+    // justify-self: center;
+    // align-self: center;
+    // text-align: center;
+    // @include breakpoint(laptop) {
+    //   margin-top: 20rem;
+    // }
+    // @include breakpoint(tablet) {
+    //   margin-top: 30rem;
+    // }
+
+    @include breakpoint(phablet) {
+      grid-row: 2 / span 2;
+    }
+    @include breakpoint(mobileonly) {
+      margin-top: 10rem;
+    }
+    // @include breakpoint(landscap) {
+    //   margin-top: 0;
+    // }
+  }
+}
+
+// navbar
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-gap: 4rem;
+  grid-auto-flow: column;
+  @include breakpoint(phablet) {
+    display: none;
+    span {
+      color: $color-primary-red-dark;
+    }
+  }
+  &__item {
+    padding: 1rem;
+    @include breakpoint(phablet) {
+      padding: 1.5rem;
+      width: 80vw;
+      margin: 0 auto;
+      text-align: center;
+      &:nth-child(3) {
+        border-bottom: 1px solid $color-grayish-blue;
+      }
+    }
+  }
+
+  &__link,
+  &__link:link,
+  &__link:active {
+    display: flex;
+    color: $color-white;
+    @include breakpoint(phablet) {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: $color-black-blue !important;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .arrow-down {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    transition: all 0.2s;
+  }
+  .arrow-up {
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+  &__item:hover .arrow-down {
+    display: none;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+  }
+  &__item:hover .arrow-up {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+  }
+
+  .sub-nav {
+    display: none;
+    background-color: $color-white;
+    padding: 1.5rem 1rem;
+    border-radius: 0.2rem;
+    position: absolute;
+    z-index: 1;
+
+    transition: all 0.3s ease-in;
+    @include breakpoint(phablet) {
+      width: 80vw;
+      margin: 2rem auto 0;
+      margin-left: -2vw;
+      border-radius: 0.5rem;
+      background-color: $color-grayish-blue;
+    }
+
+    &__item {
+      padding: 1rem 0.75rem;
+
+      @include breakpoint(phablet) {
+        margin-left: -2rem;
+      }
+    }
+    &__link {
+      color: $color-dark-grayish-blue;
+      font-weight: 700;
+      @include breakpoint(phablet) {
+        text-align: center;
+        font-size: 2.4rem !important;
+      }
+
+      &:hover {
+        color: $color-black-blue;
+      }
+    }
+  }
+  &__item:hover .sub-nav {
+    display: block;
+    box-shadow: 0 1rem 2rem rgba($color-black-blue, 0.2);
+    @include breakpoint(phablet) {
+      position: relative;
+      box-shadow: none;
+      text-align: center;
+    }
+  }
+}
+
+.auth {
+  display: flex;
+  @include breakpoint(phablet) {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  width: 90vw;
+  margin: 13rem 5vw 0 5vw;
+  padding: 2rem 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba($color-black-blue, 0.5);
+}
+
+.auth__mobile {
+  display: none;
+
+  @include breakpoint(phablet) {
+    display: block;
+    width: 100%;
+    margin: 3rem auto 1rem;
+  }
+  .auth__link {
+    font-size: 2.4rem;
+    &:nth-child(2) {
+      color: $color-black-blue;
+      margin-bottom: 1rem;
+    }
+  }
+}

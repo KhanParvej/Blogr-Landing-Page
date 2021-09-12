@@ -1,0 +1,34 @@
+.state {
+  margin: 5rem 0 5rem 0;
+
+  background-color: rgba($gradient-blue-dark, 0.9);
+  background-image: //linear-gradient(
+      //rgba($gradient-blue-gray, 0.9),
+     // rgba($gradient-blue-dark, 0.9)
+   // ),
+    url(../images/bg-pattern-circles.svg);
+  background-position-x: -20rem;
+  background-position-y: -70rem;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  border-radius: 0 10rem 0 10rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    position: relative;
+    padding: 13rem 0;
+  }
+
+  &__details {
+    width: 50%;
+    margin-left: auto;
+  }
+  &__img {
+    position: absolute;
+    top: -8rem;
+    left: -4rem;
+    width: 50%;
+  }
+}

@@ -1,0 +1,13 @@
+.navbar__icon {
+  display: none;
+  @include breakpoint(phablet) {
+    display: block;
+  }
+  .icon-close {
+    display: none;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+}
+@include breakpoint(tablet) {
+}

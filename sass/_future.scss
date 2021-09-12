@@ -1,0 +1,70 @@
+.future__container {
+  position: relative;
+  padding: 5rem 0 30rem 0;
+  margin-top: 10rem;
+  overflow: hidden;
+  @include breakpoint(laptop) {
+    padding-bottom: 10rem;
+  }
+  .future {
+    display: grid;
+    grid-template-columns: min-content repeat(2, minmax(min-content, 1fr));
+    grid-template-rows: 13vw min-content min-content;
+    grid-auto-rows: min-content;
+    @include breakpoint(laptop) {
+      justify-items: center;
+      text-align: center;
+    }
+
+    &__heading {
+      grid-column: 1 / -1;
+
+      justify-self: center;
+    }
+    &__details-1 {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 2;
+      @include breakpoint(laptop) {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 1;
+      }
+    }
+    &__details-2 {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 2;
+      @include breakpoint(laptop) {
+        grid-column: 1 / -1;
+        grid-row: 4 / span 1;
+      }
+    }
+    &__details--right {
+      grid-column: 3 / span 1;
+      @include breakpoint(laptop) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__img {
+      max-width: 90rem;
+      position: absolute;
+      right: -32rem;
+      top: 5rem;
+      @include breakpoint(laptop) {
+        width: 70%;
+        position: relative;
+        top: 0;
+        left: 0;
+        grid-column: 1 / -1;
+        grid-row: 2 / span 1;
+      }
+    }
+    .img__left {
+      left: -32rem;
+      top: 10rem;
+      @include breakpoint(laptop) {
+        top: -8rem;
+        left: 0;
+      }
+    }
+  }
+}
